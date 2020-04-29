@@ -83,7 +83,6 @@ public class SongPlayer : MonoBehaviour
             }
 
             trackTime = (float)(AudioSettings.dspTime - startTime);
-            // Debug.Log(trackTime);
             // Find which beat we are on
             beatTime = trackTime / spb;
 
@@ -139,13 +138,10 @@ public class SongPlayer : MonoBehaviour
             previousBeat = beatNum;
 
             // Currently clicking on every beat
-            // if (beatNum > previousBeatSpawned)
-            {
-                beatNote.songBeatPosition = beatNum + spawnBeatInAdvance;
-                beatNote.beatInitAdvance = spawnBeatInAdvance;
-                Instantiate(beatNote);
-                previousBeatSpawned = beatNum + spawnBeatInAdvance;
-            }
+            beatNote.songBeatPosition = beatNum + spawnBeatInAdvance;
+            beatNote.beatInitAdvance = spawnBeatInAdvance;
+            Instantiate(beatNote);
+            previousBeatSpawned = beatNum + spawnBeatInAdvance;
         }
     }
 
